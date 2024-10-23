@@ -1,0 +1,37 @@
+{
+  "Timestamp": "2024-10-23T10:13:51.257222+02:00",
+  "ObservedTimestamp": "2024-10-23T10:13:51.257231+02:00",
+  "Severity": 13,
+  "SeverityText": "",
+  "Body": { "Type": "String", "Value": "shutdown signal received" },
+  "Attributes": [
+    { "Key": "sig", "Value": { "Type": "String", "Value": "interrupt" } }
+  ],
+  "TraceID": "00000000000000000000000000000000",
+  "SpanID": "0000000000000000",
+  "TraceFlags": "00",
+  "Resource": [
+    {
+      "Key": "service.name",
+      "Value": { "Type": "STRING", "Value": "p2p-observability" }
+    },
+    {
+      "Key": "service.version",
+      "Value": { "Type": "STRING", "Value": "0.1.0" }
+    },
+    {
+      "Key": "telemetry.sdk.language",
+      "Value": { "Type": "STRING", "Value": "go" }
+    },
+    {
+      "Key": "telemetry.sdk.name",
+      "Value": { "Type": "STRING", "Value": "opentelemetry" }
+    },
+    {
+      "Key": "telemetry.sdk.version",
+      "Value": { "Type": "STRING", "Value": "1.31.0" }
+    }
+  ],
+  "Scope": { "Name": "p2p-observability", "Version": "", "SchemaURL": "" },
+  "DroppedAttributes": 0
+}
