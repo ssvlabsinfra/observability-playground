@@ -1,0 +1,57 @@
+{
+  "Resource": [
+    {
+      "Key": "service.name",
+      "Value": { "Type": "STRING", "Value": "p2p-observability" }
+    },
+    {
+      "Key": "service.version",
+      "Value": { "Type": "STRING", "Value": "0.1.0" }
+    },
+    {
+      "Key": "telemetry.sdk.language",
+      "Value": { "Type": "STRING", "Value": "go" }
+    },
+    {
+      "Key": "telemetry.sdk.name",
+      "Value": { "Type": "STRING", "Value": "opentelemetry" }
+    },
+    {
+      "Key": "telemetry.sdk.version",
+      "Value": { "Type": "STRING", "Value": "1.31.0" }
+    }
+  ],
+  "ScopeMetrics": [
+    {
+      "Scope": {
+        "Name": "github.com/ssvlabsinfra/p2p-observability/main",
+        "Version": "0.0.1",
+        "SchemaURL": ""
+      },
+      "Metrics": [
+        {
+          "Name": "p2p-observability",
+          "Description": "p2p observability counter description",
+          "Unit": "",
+          "Data": {
+            "DataPoints": [
+              {
+                "Attributes": [
+                  {
+                    "Key": "attr",
+                    "Value": { "Type": "STRING", "Value": "custom_attribute" }
+                  }
+                ],
+                "StartTime": "2024-10-23T10:13:33.394949+02:00",
+                "Time": "2024-10-23T10:13:51.257301+02:00",
+                "Value": 17
+              }
+            ],
+            "Temporality": "CumulativeTemporality",
+            "IsMonotonic": true
+          }
+        }
+      ]
+    }
+  ]
+}
