@@ -3,8 +3,6 @@ BINARY_DIR=${EXEC_DIR}/bin
 BINARY_NAME=p2p
 DOCKER_IMAGE_NANE=p2p-observability
 
-export OTEL_RESOURCE_ATTRIBUTES=service.name=p2p-observability
-
 default: build run
 
 .PHONY: build
@@ -26,7 +24,7 @@ docker-run:
 
 .PHONY: docker-compose-up
 docker-compose-up:
-	docker-compose -f ./build/docker-compose.yml up -d
+	docker-compose -f ./build/docker-compose.yml up -d --no-deps --build
 
 .PHONY: docker-compose-down
 docker-compose-down:
