@@ -4,4 +4,4 @@ global:
 scrape_configs:
   - job_name: 'p2p-observability-scraper'
     static_configs:
-      - targets: ['ssv-pulse:8080']
+      - targets: ['p2p-observability:8080']
