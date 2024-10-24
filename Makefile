@@ -24,7 +24,7 @@ docker-run:
 
 .PHONY: docker-compose-up
 docker-compose-up:
-	docker-compose -f ./build/docker-compose.yml up -d --no-deps --build
+	docker-compose -f ./build/docker-compose.yml up -d
 
 .PHONY: docker-compose-down
 docker-compose-down:
