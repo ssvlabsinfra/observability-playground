@@ -1,0 +1,4 @@
+multitenancy_enabled: false
+
+server:
+  http_listen_port: 9009
