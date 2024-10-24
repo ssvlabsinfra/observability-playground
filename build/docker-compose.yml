@@ -3,6 +3,7 @@ services:
   otel-collector:
     image: otel/opentelemetry-collector:0.111.0
     container_name: otel-collector
+    restart: always
     command: ["--config=/etc/config.yml", "${OTELCOL_ARGS}"]
     volumes:
       - ./otel-collector/config.yml:/etc/config.yml
@@ -17,6 +18,7 @@ services:
   prometheus:
     image: prom/prometheus
     container_name: prometheus
+    restart: always
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
@@ -30,6 +32,7 @@ services:
   mimir:
     image: grafana/mimir:latest
     container_name: mimir
+    restart: always
     ports:
       - "9009:9009"  # Mimir API endpoint
       - "9091:9090"  # Mimir Prometheus endpoint
@@ -45,6 +48,7 @@ services:
 
   grafana:
     image: grafana/grafana
+    restart: always
     container_name: grafana
     ports:
       - "3000:3000"
@@ -65,6 +69,7 @@ services:
   ### SERVICES
   p2p-observability:
     container_name: p2p-observability
+    restart: always
     build:
       dockerfile: ./build/Dockerfile
       context: .. 
