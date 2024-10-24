@@ -8,3 +8,10 @@ datasources:
     isDefault: true
     editable: true
     uid: prometheusdatasource
+  - name: Mimir
+    type: prometheus
+    access: proxy
+    url: http://mimir:9009/prometheus
+    isDefault: false
+    editable: true
+    uid: mimirdatasource

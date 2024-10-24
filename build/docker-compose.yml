@@ -2,6 +2,7 @@ services:
   ### MONITORING
   otel-collector:
     image: otel/opentelemetry-collector:0.111.0
+    container_name: otel-collector
     command: ["--config=/etc/config.yml", "${OTELCOL_ARGS}"]
     volumes:
       - ./otel-collector/config.yml:/etc/config.yml
@@ -10,6 +11,8 @@ services:
       - "8889:8889"   # Prometheus exporter metrics
       - "13133:13133" # health_check extension
       - "4317:4317"   # OTLP gRPC receiver
+    networks:
+      - monitoring
       
   prometheus:
     image: prom/prometheus
@@ -19,8 +22,26 @@ services:
       - prometheus_data:/prometheus
     ports:
       - "9090:9090"
+    networks:
+      - monitoring
     depends_on:
       - p2p-observability
+
+  mimir:
+    image: grafana/mimir:latest
+    container_name: mimir
+    ports:
+      - "9009:9009"  # Mimir API endpoint
+      - "9091:9090"  # Mimir Prometheus endpoint
+    environment:
+      - ENABLE_METRICS=true
+      - ENABLE_API=true
+    volumes:
+      - ./mimir/mimir-config.yml:/etc/mimir/mimir-config.yml
+    command:
+      - "-config.file=/etc/mimir/mimir-config.yml"
+    networks:
+      - monitoring
 
   grafana:
     image: grafana/grafana
@@ -35,8 +56,11 @@ services:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/provisioning/dashboards:/var/lib/grafana/dashboards
+    networks:
+      - monitoring
     depends_on:
       - prometheus
+      - mimir
 
   ### SERVICES
   p2p-observability:
@@ -44,7 +68,13 @@ services:
     build:
       dockerfile: ./build/Dockerfile
       context: .. 
+    networks:
+      - monitoring
 
 volumes:
   prometheus_data:
   grafana_data:
+
+networks:
+  monitoring:
+    driver: bridge
