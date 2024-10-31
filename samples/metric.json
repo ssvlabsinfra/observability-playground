@@ -24,7 +24,7 @@
   "ScopeMetrics": [
     {
       "Scope": {
-        "Name": "github.com/ssvlabsinfra/p2p-observability/main",
+        "Name": "github.com/ssvlabsinfra/p2p-observability/internal/work",
         "Version": "0.0.1",
         "SchemaURL": ""
       },
@@ -42,9 +42,46 @@
                     "Value": { "Type": "STRING", "Value": "custom_attribute" }
                   }
                 ],
-                "StartTime": "2024-10-23T10:13:33.394949+02:00",
-                "Time": "2024-10-23T10:13:51.257301+02:00",
-                "Value": 17
+                "StartTime": "2024-10-31T12:47:54.182733342Z",
+                "Time": "2024-10-31T12:48:04.185478721Z",
+                "Value": 9,
+                "Exemplars": [
+                  {
+                    "FilteredAttributes": null,
+                    "Time": "2024-10-31T12:47:59.184540761Z",
+                    "Value": 1,
+                    "SpanID": "AxJZJZvdQMw=",
+                    "TraceID": "kIr/Q0c3YVhZ5wl9hOhWxA=="
+                  },
+                  {
+                    "FilteredAttributes": null,
+                    "Time": "2024-10-31T12:48:00.187501428Z",
+                    "Value": 1,
+                    "SpanID": "FkbHdIGlFGI=",
+                    "TraceID": "kR/B5D7g2Cv0/2t1CEvHHw=="
+                  },
+                  {
+                    "FilteredAttributes": null,
+                    "Time": "2024-10-31T12:48:01.18833197Z",
+                    "Value": 1,
+                    "SpanID": "zo98iXaHm8E=",
+                    "TraceID": "ukXAMtHeGZcb2Sxd5ys5og=="
+                  },
+                  {
+                    "FilteredAttributes": null,
+                    "Time": "2024-10-31T12:48:02.186522179Z",
+                    "Value": 1,
+                    "SpanID": "IPYXdHBHl1c=",
+                    "TraceID": "8YnYaeePxyQoeXyoshJ3Ww=="
+                  },
+                  {
+                    "FilteredAttributes": null,
+                    "Time": "2024-10-31T12:48:03.186223929Z",
+                    "Value": 1,
+                    "SpanID": "8/5EPKEpib4=",
+                    "TraceID": "kA9q91xxdYbvvZCIpdZz2A=="
+                  }
+                ]
               }
             ],
             "Temporality": "CumulativeTemporality",
