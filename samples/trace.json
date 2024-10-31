@@ -1,0 +1,101 @@
+{
+	"Name": "work",
+	"SpanContext": {
+		"TraceID": "0d8f120432a57c9a2d44cf064c5b8158",
+		"SpanID": "0cc20d0aaccf5255",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "00000000000000000000000000000000",
+		"SpanID": "0000000000000000",
+		"TraceFlags": "00",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2024-10-31T12:48:07.185195042Z",
+	"EndTime": "2024-10-31T12:48:07.185280709Z",
+	"Attributes": [
+		{
+			"Key": "id",
+			"Value": {
+				"Type": "STRING",
+				"Value": "c6f707f2-cee0-461e-a496-83c9480676f6"
+			}
+		}
+	],
+	"Events": [
+		{
+			"Name": "work called",
+			"Attributes": [
+				{
+					"Key": "id",
+					"Value": {
+						"Type": "STRING",
+						"Value": "c6f707f2-cee0-461e-a496-83c9480676f6"
+					}
+				}
+			],
+			"DroppedAttributeCount": 0,
+			"Time": "2024-10-31T12:48:07.1852385Z"
+		}
+	],
+	"Links": null,
+	"Status": {
+		"Code": "Ok",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "p2p-observability"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0.1.0"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.language",
+			"Value": {
+				"Type": "STRING",
+				"Value": "go"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.31.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "github.com/ssvlabsinfra/p2p-observability/internal/work",
+		"Version": "",
+		"SchemaURL": ""
+	},
+	"InstrumentationLibrary": {
+		"Name": "github.com/ssvlabsinfra/p2p-observability/internal/work",
+		"Version": "",
+		"SchemaURL": ""
+	}
+}

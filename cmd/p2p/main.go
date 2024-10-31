@@ -7,12 +7,11 @@ import (
 	"os"
 	"time"
 
+	"github.com/google/uuid"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/ssvlabsinfra/p2p-observability/internal/platform/lifecycle"
 	"github.com/ssvlabsinfra/p2p-observability/internal/platform/observability"
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/metric"
+	"github.com/ssvlabsinfra/p2p-observability/internal/work"
 )
 
 const (
@@ -27,15 +26,12 @@ func main() {
 		panic(err.Error())
 	}
 
-	meter := otel.Meter("github.com/ssvlabsinfra/p2p-observability/main", metric.WithInstrumentationVersion("0.0.1"))
-	counter, err := meter.Int64Counter("p2p-observability", metric.WithDescription("p2p observability counter description"))
-	if err != nil {
-		panic(err.Error())
-	}
 	slog.Info("OTeL SDK configured. Listening for application shutdown")
 
 	ticker := time.NewTicker(1 * time.Second)
 	defer ticker.Stop()
+
+	work := work.New()
 
 	go func() {
 		for {
@@ -43,7 +39,7 @@ func main() {
 			case <-ctx.Done():
 				return
 			case <-ticker.C:
-				counter.Add(ctx, 1, metric.WithAttributes(attribute.String("attr", "custom_attribute")))
+				work.Do(ctx, uuid.New())
 			}
 		}
 	}()

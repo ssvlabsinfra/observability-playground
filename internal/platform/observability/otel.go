@@ -41,19 +41,20 @@ func SetupOTelSDK(ctx context.Context, appName, appVersion string) (shutdown fun
 	prop := newPropagator()
 	otel.SetTextMapPropagator(prop)
 
-	tracerProvider, err := newTraceProvider()
-	if err != nil {
-		handleErr(err)
-		return
-	}
-	shutdownFuncs = append(shutdownFuncs, tracerProvider.Shutdown)
-	otel.SetTracerProvider(tracerProvider)
-
 	appResource, err := resource.Merge(resource.Default(), resource.NewWithAttributes(
 		semconv.SchemaURL,
 		semconv.ServiceName(appName),
 		semconv.ServiceVersion(appVersion),
 	))
+
+	tracerProvider, err := newTraceProvider(appResource)
+	if err != nil {
+		handleErr(err)
+		return
+	}
+
+	shutdownFuncs = append(shutdownFuncs, tracerProvider.Shutdown)
+	otel.SetTracerProvider(tracerProvider)
 
 	if err != nil {
 		handleErr(err)
@@ -86,13 +87,14 @@ func newPropagator() propagation.TextMapPropagator {
 	)
 }
 
-func newTraceProvider() (*trace.TracerProvider, error) {
+func newTraceProvider(res *resource.Resource) (*trace.TracerProvider, error) {
 	traceExporter, err := stdouttrace.New(stdouttrace.WithPrettyPrint())
 	if err != nil {
 		return nil, err
 	}
 
 	traceProvider := trace.NewTracerProvider(
+		trace.WithResource(res),
 		trace.WithBatcher(traceExporter, trace.WithBatchTimeout(time.Second)),
 	)
 	return traceProvider, nil

@@ -1,11 +1,17 @@
 {
-  "Timestamp": "2024-10-23T10:13:51.257222+02:00",
-  "ObservedTimestamp": "2024-10-23T10:13:51.257231+02:00",
-  "Severity": 13,
+  "Timestamp": "2024-10-31T12:48:06.18360075Z",
+  "ObservedTimestamp": "2024-10-31T12:48:06.183606333Z",
+  "Severity": 9,
   "SeverityText": "",
-  "Body": { "Type": "String", "Value": "shutdown signal received" },
+  "Body": { "Type": "String", "Value": "work finished" },
   "Attributes": [
-    { "Key": "sig", "Value": { "Type": "String", "Value": "interrupt" } }
+    {
+      "Key": "id",
+      "Value": {
+        "Type": "String",
+        "Value": "3db336d0-4a60-4170-9578-b19accca7104"
+      }
+    }
   ],
   "TraceID": "00000000000000000000000000000000",
   "SpanID": "0000000000000000",
