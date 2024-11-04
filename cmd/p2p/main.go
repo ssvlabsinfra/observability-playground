@@ -31,7 +31,7 @@ func main() {
 	ticker := time.NewTicker(1 * time.Second)
 	defer ticker.Stop()
 
-	work := work.New()
+	work := work.New(work.NewMetrics())
 
 	go func() {
 		for {

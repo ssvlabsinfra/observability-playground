@@ -125,6 +125,7 @@ func newMeterProvider(ctx context.Context, res *resource.Resource) (*metric.Mete
 		metric.WithReader(metric.NewPeriodicReader(gRPCExporter, metric.WithInterval(time.Second*10))),
 		metric.WithReader(metric.NewPeriodicReader(metricExporter, metric.WithInterval(time.Second*5))),
 	)
+
 	return meterProvider, nil
 }
 

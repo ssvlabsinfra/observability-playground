@@ -1,8 +1,116 @@
 {
+	"Name": "sub_work",
+	"SpanContext": {
+		"TraceID": "0cfac1e8c06a212e14878ed92e15165c",
+		"SpanID": "ee7637b72c630dc7",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "0cfac1e8c06a212e14878ed92e15165c",
+		"SpanID": "741f8ed4a7284b8e",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2024-11-01T17:44:24.411893925Z",
+	"EndTime": "2024-11-01T17:44:24.411907633Z",
+	"Attributes": [
+		{
+			"Key": "id",
+			"Value": {
+				"Type": "STRING",
+				"Value": "a0056200-c76b-44bb-948b-489b2d334ac3"
+			}
+		}
+	],
+	"Events": [
+		{
+			"Name": "exception",
+			"Attributes": [
+				{
+					"Key": "exception.type",
+					"Value": {
+						"Type": "STRING",
+						"Value": "*errors.errorString"
+					}
+				},
+				{
+					"Key": "exception.message",
+					"Value": {
+						"Type": "STRING",
+						"Value": "work error"
+					}
+				}
+			],
+			"DroppedAttributeCount": 0,
+			"Time": "2024-11-01T17:44:24.411904467Z"
+		}
+	],
+	"Links": null,
+	"Status": {
+		"Code": "Error",
+		"Description": "work error"
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "p2p-observability"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "0.1.0"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.language",
+			"Value": {
+				"Type": "STRING",
+				"Value": "go"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.31.0"
+			}
+		}
+	],
+	"InstrumentationScope": {
+		"Name": "github.com/ssvlabsinfra/p2p-observability/internal/work",
+		"Version": "",
+		"SchemaURL": ""
+	},
+	"InstrumentationLibrary": {
+		"Name": "github.com/ssvlabsinfra/p2p-observability/internal/work",
+		"Version": "",
+		"SchemaURL": ""
+	}
+}
+{
 	"Name": "work",
 	"SpanContext": {
-		"TraceID": "0d8f120432a57c9a2d44cf064c5b8158",
-		"SpanID": "0cc20d0aaccf5255",
+		"TraceID": "0cfac1e8c06a212e14878ed92e15165c",
+		"SpanID": "741f8ed4a7284b8e",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -15,14 +123,14 @@
 		"Remote": false
 	},
 	"SpanKind": 1,
-	"StartTime": "2024-10-31T12:48:07.185195042Z",
-	"EndTime": "2024-10-31T12:48:07.185280709Z",
+	"StartTime": "2024-11-01T17:44:24.411709425Z",
+	"EndTime": "2024-11-01T17:44:24.411966758Z",
 	"Attributes": [
 		{
 			"Key": "id",
 			"Value": {
 				"Type": "STRING",
-				"Value": "c6f707f2-cee0-461e-a496-83c9480676f6"
+				"Value": "a0056200-c76b-44bb-948b-489b2d334ac3"
 			}
 		}
 	],
@@ -34,23 +142,50 @@
 					"Key": "id",
 					"Value": {
 						"Type": "STRING",
-						"Value": "c6f707f2-cee0-461e-a496-83c9480676f6"
+						"Value": "a0056200-c76b-44bb-948b-489b2d334ac3"
 					}
 				}
 			],
 			"DroppedAttributeCount": 0,
-			"Time": "2024-10-31T12:48:07.1852385Z"
+			"Time": "2024-11-01T17:44:24.411779258Z"
+		},
+		{
+			"Name": "calling subwork",
+			"Attributes": null,
+			"DroppedAttributeCount": 0,
+			"Time": "2024-11-01T17:44:24.411884675Z"
+		},
+		{
+			"Name": "exception",
+			"Attributes": [
+				{
+					"Key": "exception.type",
+					"Value": {
+						"Type": "STRING",
+						"Value": "*errors.errorString"
+					}xww
+				},
+				{
+					"Key": "exception.message",
+					"Value": {
+						"Type": "STRING",
+						"Value": "work error"
+					}
+				}
+			],
+			"DroppedAttributeCount": 0,
+			"Time": "2024-11-01T17:44:24.411964425Z"
 		}
 	],
 	"Links": null,
 	"Status": {
-		"Code": "Ok",
-		"Description": ""
+		"Code": "Error",
+		"Description": "work error"
 	},
 	"DroppedAttributes": 0,
 	"DroppedEvents": 0,
 	"DroppedLinks": 0,
-	"ChildSpanCount": 0,
+	"ChildSpanCount": 1,
 	"Resource": [
 		{
 			"Key": "service.name",
