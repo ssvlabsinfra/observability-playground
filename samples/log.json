@@ -1,18 +1,10 @@
 {
-  "Timestamp": "2024-10-31T12:48:06.18360075Z",
-  "ObservedTimestamp": "2024-10-31T12:48:06.183606333Z",
+  "Timestamp": "2024-11-08T09:26:55.828009129Z",
+  "ObservedTimestamp": "2024-11-08T09:26:55.828020088Z",
   "Severity": 9,
   "SeverityText": "",
-  "Body": { "Type": "String", "Value": "work finished" },
-  "Attributes": [
-    {
-      "Key": "id",
-      "Value": {
-        "Type": "String",
-        "Value": "3db336d0-4a60-4170-9578-b19accca7104"
-      }
-    }
-  ],
+  "Body": { "Type": "String", "Value": "item stored" },
+  "Attributes": [],
   "TraceID": "00000000000000000000000000000000",
   "SpanID": "0000000000000000",
   "TraceFlags": "00",
