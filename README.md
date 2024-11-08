@@ -1,3 +1,3 @@
-# P2P Observability
+# Observability playground
 
-## [Diagram](https://github.com/ssvlabsinfra/p2p-observability/blob/main/docs/diagram.png)
+## [Diagram](https://github.com/ssvlabsinfra/observability-playground/blob/main/docs/diagram.png)
