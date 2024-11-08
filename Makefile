@@ -1,7 +1,7 @@
-EXEC_DIR=cmd/p2p
+EXEC_DIR=cmd/playground
 BINARY_DIR=${EXEC_DIR}/bin
-BINARY_NAME=p2p
-DOCKER_IMAGE_NANE=p2p-observability
+BINARY_NAME=playground
+DOCKER_IMAGE_NANE=observability-playground
 
 default: build run
 
