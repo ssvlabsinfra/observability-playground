@@ -11,7 +11,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/ssvlabsinfra/p2p-observability/internal/platform/lifecycle"
 	"github.com/ssvlabsinfra/p2p-observability/internal/platform/observability"
-	"github.com/ssvlabsinfra/p2p-observability/internal/work"
+	"github.com/ssvlabsinfra/p2p-observability/internal/processor"
+	"github.com/ssvlabsinfra/p2p-observability/internal/storage"
 )
 
 const (
@@ -21,7 +22,11 @@ const (
 
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
-	otelShutdown, err := observability.SetupOTelSDK(ctx, appName, appVersion)
+
+	shutdownFunc, err := observability.Initialize(ctx, appName, appVersion,
+		observability.WithMetrics([]observability.Exporter{observability.Prometheus, observability.GRPC, observability.Stdout}),
+		observability.WithTraces(),
+		observability.WithLogger())
 	if err != nil {
 		panic(err.Error())
 	}
@@ -31,7 +36,12 @@ func main() {
 	ticker := time.NewTicker(1 * time.Second)
 	defer ticker.Stop()
 
-	work := work.New(work.NewMetrics())
+	if err != nil {
+		panic(err.Error())
+	}
+	storage := storage.New()
+
+	processor := processor.New(storage)
 
 	go func() {
 		for {
@@ -39,7 +49,7 @@ func main() {
 			case <-ctx.Done():
 				return
 			case <-ticker.C:
-				work.Do(ctx, uuid.New())
+				processor.Process(ctx, uuid.New())
 			}
 		}
 	}()
@@ -56,7 +66,7 @@ func main() {
 	}()
 
 	lifecycle.ListenForApplicationShutDown(ctx, func() {
-		if err = otelShutdown(ctx); err != nil {
+		if err = shutdownFunc(ctx); err != nil {
 			panic(err.Error())
 		}
 		cancel()
