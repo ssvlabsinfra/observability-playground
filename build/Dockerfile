@@ -8,11 +8,11 @@ COPY . .
 ARG TARGETOS TARGETARCH
 ENV CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH
 
-RUN go build -o bin/p2p cmd/p2p/main.go
+RUN go build -o bin/playground cmd/playground/main.go
 
 ###############################################
 FROM busybox AS busybox
-RUN addgroup -S p2pgroup && adduser -S -G p2pgroup p2puser
+RUN addgroup -S playgroundgroup && adduser -S -G playgroundgroup playgrounduser
 
 ###############################################
 FROM debian:stable-slim AS certs
@@ -23,7 +23,7 @@ FROM scratch
 
 WORKDIR /app
 
-COPY --from=builder /app/bin/p2p .
+COPY --from=builder /app/bin/playground .
 
 COPY --from=busybox /etc/passwd /etc/passwd
 COPY --from=busybox /etc/group /etc/group
@@ -32,7 +32,7 @@ COPY --from=certs /etc/ssl/certs /etc/ssl/certs
 COPY --from=certs /etc/ssl/private /etc/ssl/private
 COPY --from=certs /usr/share/ca-certificates /usr/share/ca-certificates
 
-USER p2puser:p2pgroup
+USER playgrounduser:playgroundgroup
 
-ENTRYPOINT ["/app/p2p"]
+ENTRYPOINT ["/app/playground"]
 CMD []

@@ -27,7 +27,7 @@ services:
     networks:
       - monitoring
     depends_on:
-      - p2p-observability
+      - observability-playground
 
   mimir:
     image: grafana/mimir:latest
@@ -67,8 +67,8 @@ services:
       - mimir
 
   ### SERVICES
-  p2p-observability:
-    container_name: p2p-observability
+  observability-playground:
+    container_name: observability-playground
     restart: always
     build:
       dockerfile: ./build/Dockerfile
