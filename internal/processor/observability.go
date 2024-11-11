@@ -1,6 +1,7 @@
 package processor
 
 import (
+	"fmt"
 	"log/slog"
 
 	"go.opentelemetry.io/otel"
@@ -8,27 +9,29 @@ import (
 )
 
 const (
-	observabilityComponentName = "github.com/ssvlabsinfra/p2p-observability/internal/processor"
+	observabilityComponentName      = "github.com/ssvlabsinfra/observability-playground/internal/processor"
+	observabilityComponentNamespace = "observability_playground.processor"
 )
 
 var (
 	tracer = otel.Tracer(observabilityComponentName)
 	meter  = otel.Meter(observabilityComponentName)
 
-	processorItemCounter metric.Int64Counter
+	itemCounter metric.Int64Counter
 )
 
 func init() {
 	var err error
-	processorItemCounter, err = meter.Int64Counter(
-		"processor.item.total",
+	itemCounterMetricName := fmt.Sprintf("%s.items", observabilityComponentNamespace)
+	itemCounter, err = meter.Int64Counter(
+		itemCounterMetricName,
 		metric.WithUnit("{item}"),
 		metric.WithDescription("number of items processed"))
 	if err != nil {
 		slog.
 			With("err", err).
 			With("component", observabilityComponentName).
-			With("metric", "processor.item.total").
+			With("metric", itemCounterMetricName).
 			Error("error instantiating metric")
 	}
 }

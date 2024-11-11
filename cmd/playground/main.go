@@ -9,14 +9,14 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/ssvlabsinfra/p2p-observability/internal/platform/lifecycle"
-	"github.com/ssvlabsinfra/p2p-observability/internal/platform/observability"
-	"github.com/ssvlabsinfra/p2p-observability/internal/processor"
-	"github.com/ssvlabsinfra/p2p-observability/internal/storage"
+	"github.com/ssvlabsinfra/observability-playground/internal/platform/lifecycle"
+	"github.com/ssvlabsinfra/observability-playground/internal/platform/observability"
+	"github.com/ssvlabsinfra/observability-playground/internal/processor"
+	"github.com/ssvlabsinfra/observability-playground/internal/storage"
 )
 
 const (
-	appName    = "p2p-observability"
+	appName    = "observability-playground"
 	appVersion = "0.1.0"
 )
 

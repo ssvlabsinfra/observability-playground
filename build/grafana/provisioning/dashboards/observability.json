@@ -108,7 +108,7 @@
             "uid": "prometheusdatasource"
           },
           "editorMode": "code",
-          "expr": "rate(store_item_total{}[$__rate_interval])",
+          "expr": "rate(observability_playground_storage_items_total{}[$__rate_interval])",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -119,7 +119,7 @@
             "uid": "mimirdatasource"
           },
           "editorMode": "code",
-          "expr": "rate(store_item_total{}[$__rate_interval])",
+          "expr": "rate(observability_playground_storage_items_total{}[$__rate_interval])",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -216,7 +216,7 @@
             "uid": "prometheusdatasource"
           },
           "editorMode": "code",
-          "expr": "rate(processor_item_total{}[$__rate_interval])",
+          "expr": "rate(observability_playground_processor_items_total{}[$__rate_interval])",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -227,7 +227,7 @@
             "uid": "mimirdatasource"
           },
           "editorMode": "code",
-          "expr": "rate(processor_item_total{}[$__rate_interval])",
+          "expr": "rate(observability_playground_processor_items_total{}[$__rate_interval])",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -252,6 +252,6 @@
   "timezone": "browser",
   "title": "Observability",
   "uid": "de1u22s66ehvke",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }

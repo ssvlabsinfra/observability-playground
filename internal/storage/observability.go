@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"fmt"
 	"log/slog"
 
 	"go.opentelemetry.io/otel"
@@ -8,7 +9,8 @@ import (
 )
 
 const (
-	observabilityComponentName = "github.com/ssvlabsinfra/p2p-observability/internal/storage"
+	observabilityComponentName      = "github.com/ssvlabsinfra/observability-playground/internal/storage"
+	observabilityComponentNamespace = "observability_playground.storage"
 )
 
 var (
@@ -20,15 +22,16 @@ var (
 
 func init() {
 	var err error
+	itemCounterMetricName := fmt.Sprintf("%s.items", observabilityComponentNamespace)
 	storageItemCounter, err = meter.Int64Counter(
-		"store.item.total",
+		itemCounterMetricName,
 		metric.WithUnit("{item}"),
 		metric.WithDescription("number of items stored"))
 	if err != nil {
 		slog.
 			With("err", err).
 			With("component", observabilityComponentName).
-			With("metric", "store.item.total").
+			With("metric", itemCounterMetricName).
 			Error("error instantiating metric")
 	}
 }

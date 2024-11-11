@@ -2,6 +2,7 @@ package processor
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/google/uuid"
 	"go.opentelemetry.io/otel/attribute"
@@ -25,7 +26,7 @@ func New(storage storage) *Processor {
 }
 
 func (p *Processor) Process(ctx context.Context, uuid uuid.UUID) {
-	ctx, span := tracer.Start(ctx, "process",
+	ctx, span := tracer.Start(ctx, fmt.Sprintf("%s.process", observabilityComponentNamespace),
 		trace.WithAttributes(attribute.String("id", uuid.String())))
 	defer span.End()
 	span.AddEvent("process called")
@@ -37,7 +38,7 @@ func (p *Processor) Process(ctx context.Context, uuid uuid.UUID) {
 		return
 	}
 
-	processorItemCounter.Add(ctx, 1)
+	itemCounter.Add(ctx, 1)
 
 	span.SetStatus(codes.Ok, "processor finished")
 }

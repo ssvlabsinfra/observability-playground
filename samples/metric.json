@@ -2,7 +2,7 @@
   "Resource": [
     {
       "Key": "service.name",
-      "Value": { "Type": "STRING", "Value": "p2p-observability" }
+      "Value": { "Type": "STRING", "Value": "observability-playground" }
     },
     {
       "Key": "service.version",
@@ -24,64 +24,57 @@
   "ScopeMetrics": [
     {
       "Scope": {
-        "Name": "github.com/ssvlabsinfra/p2p-observability/internal/processor",
+        "Name": "github.com/ssvlabsinfra/observability-playground/internal/processor",
         "Version": "",
         "SchemaURL": ""
       },
       "Metrics": [
         {
-          "Name": "processor.item.total",
+          "Name": "observability_playground.processor.item.count",
           "Description": "number of items processed",
           "Unit": "{item}",
           "Data": {
             "DataPoints": [
               {
                 "Attributes": [],
-                "StartTime": "2024-11-08T09:19:30.008737131Z",
-                "Time": "2024-11-08T09:23:40.012037178Z",
-                "Value": 249,
+                "StartTime": "2024-11-11T10:41:50.244092927Z",
+                "Time": "2024-11-11T10:42:15.253382591Z",
+                "Value": 24,
                 "Exemplars": [
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:35.015844759Z",
+                    "Time": "2024-11-11T10:42:10.253999255Z",
                     "Value": 1,
-                    "SpanID": "p2YmKX5ojzw=",
-                    "TraceID": "TftDvnd1vNngJKBrffAdlw=="
+                    "SpanID": "ntdPqUpv//c=",
+                    "TraceID": "u4ZBnaLDKoLMpqtB8qIi9g=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:36.015889426Z",
+                    "Time": "2024-11-11T10:42:11.252120297Z",
                     "Value": 1,
-                    "SpanID": "u0BXZA7SvDs=",
-                    "TraceID": "EhOB30GdxkoGE8LMBvDgZw=="
+                    "SpanID": "e1CmIXnASlA=",
+                    "TraceID": "ZcIq1KzkSK28QN6RGzA3VA=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:37.016077426Z",
+                    "Time": "2024-11-11T10:42:12.254058423Z",
                     "Value": 1,
-                    "SpanID": "3NCqScs6Hlg=",
-                    "TraceID": "GJiatwir4UuB5nQjveuyDw=="
+                    "SpanID": "/8GSbA2Giao=",
+                    "TraceID": "3zxKFq5m9+DZol35FYt2Yw=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:38.013110552Z",
+                    "Time": "2024-11-11T10:42:13.250877798Z",
                     "Value": 1,
-                    "SpanID": "qlmy9mvKa2U=",
-                    "TraceID": "iwm1u2eguN0Sv0AQOVeLpQ=="
+                    "SpanID": "URnTzL8gXBA=",
+                    "TraceID": "PJbmjbOIOZWjIwRyr8sb9Q=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:39.017927177Z",
+                    "Time": "2024-11-11T10:42:14.256230966Z",
                     "Value": 1,
-                    "SpanID": "dyrJtGktiZ4=",
-                    "TraceID": "UJr44Vl3umwPiQkDgFWxYw=="
-                  },
-                  {
-                    "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:22:35.015648759Z",
-                    "Value": 1,
-                    "SpanID": "wxBHSgxSf1w=",
-                    "TraceID": "aWBfRKVPyf0JYWlpnYzwcg=="
+                    "SpanID": "2BRQR1VBfRI=",
+                    "TraceID": "yvMTuOOuTtGE3F3ESoYEsg=="
                   }
                 ]
               }
@@ -94,64 +87,64 @@
     },
     {
       "Scope": {
-        "Name": "github.com/ssvlabsinfra/p2p-observability/internal/storage",
+        "Name": "github.com/ssvlabsinfra/observability-playground/internal/storage",
         "Version": "",
         "SchemaURL": ""
       },
       "Metrics": [
         {
-          "Name": "store.item.total",
+          "Name": "observability_playground.storage.item.count",
           "Description": "number of items stored",
           "Unit": "{item}",
           "Data": {
             "DataPoints": [
               {
                 "Attributes": [],
-                "StartTime": "2024-11-08T09:19:30.008742715Z",
-                "Time": "2024-11-08T09:23:40.012078845Z",
-                "Value": 249,
+                "StartTime": "2024-11-11T10:41:50.24409851Z",
+                "Time": "2024-11-11T10:42:15.253404674Z",
+                "Value": 25,
                 "Exemplars": [
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:36.015875218Z",
+                    "Time": "2024-11-11T10:42:10.253878714Z",
                     "Value": 1,
-                    "SpanID": "kE6B0MqgaRM=",
-                    "TraceID": "EhOB30GdxkoGE8LMBvDgZw=="
+                    "SpanID": "40pCXZXJcGE=",
+                    "TraceID": "u4ZBnaLDKoLMpqtB8qIi9g=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:37.016056135Z",
+                    "Time": "2024-11-11T10:42:11.251819006Z",
                     "Value": 1,
-                    "SpanID": "4NYzq/sSI0M=",
-                    "TraceID": "GJiatwir4UuB5nQjveuyDw=="
+                    "SpanID": "Svx2u5dHwJU=",
+                    "TraceID": "ZcIq1KzkSK28QN6RGzA3VA=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:38.013091677Z",
+                    "Time": "2024-11-11T10:42:12.253988715Z",
                     "Value": 1,
-                    "SpanID": "rtXhx95FXbk=",
-                    "TraceID": "iwm1u2eguN0Sv0AQOVeLpQ=="
+                    "SpanID": "vsqLjDVViOw=",
+                    "TraceID": "3zxKFq5m9+DZol35FYt2Yw=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:39.017135386Z",
+                    "Time": "2024-11-11T10:42:13.250861965Z",
                     "Value": 1,
-                    "SpanID": "N1ir475TN7s=",
-                    "TraceID": "UJr44Vl3umwPiQkDgFWxYw=="
+                    "SpanID": "1TMHnuyn3z0=",
+                    "TraceID": "PJbmjbOIOZWjIwRyr8sb9Q=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:34.015988258Z",
+                    "Time": "2024-11-11T10:42:14.256217507Z",
                     "Value": 1,
-                    "SpanID": "Ito+AfpkTC0=",
-                    "TraceID": "hWo6ADmY7KnsHfGD0m4NlA=="
+                    "SpanID": "Aps6l3c8hcg=",
+                    "TraceID": "yvMTuOOuTtGE3F3ESoYEsg=="
                   },
                   {
                     "FilteredAttributes": null,
-                    "Time": "2024-11-08T09:23:35.015578675Z",
+                    "Time": "2024-11-11T10:42:15.253289924Z",
                     "Value": 1,
-                    "SpanID": "eFSV74YoNfU=",
-                    "TraceID": "TftDvnd1vNngJKBrffAdlw=="
+                    "SpanID": "qiXm072Q/pY=",
+                    "TraceID": "7W4OCRuorDcZ8edvdLpZzg=="
                   }
                 ]
               }

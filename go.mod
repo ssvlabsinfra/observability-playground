@@ -1,4 +1,4 @@
-module github.com/ssvlabsinfra/p2p-observability
+module github.com/ssvlabsinfra/observability-playground
 
 go 1.23.2
 

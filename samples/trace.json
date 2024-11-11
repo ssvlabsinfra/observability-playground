@@ -1,30 +1,30 @@
 [
   {
-    "Name": "store",
+    "Name": "observability_playground.storage.store",
     "SpanContext": {
-      "TraceID": "d2b831d41f2f8deedf3713493010f081",
-      "SpanID": "f91a23fdfebd056b",
+      "TraceID": "ed6e0e091ba8ac3719f1e76f74ba59ce",
+      "SpanID": "aa25e6d3bd90fe96",
       "TraceFlags": "01",
       "TraceState": "",
       "Remote": false
     },
     "Parent": {
-      "TraceID": "d2b831d41f2f8deedf3713493010f081",
-      "SpanID": "914381fcea556a63",
+      "TraceID": "ed6e0e091ba8ac3719f1e76f74ba59ce",
+      "SpanID": "186792ea9fce2e16",
       "TraceFlags": "01",
       "TraceState": "",
       "Remote": false
     },
     "SpanKind": 1,
-    "StartTime": "2024-11-08T09:23:40.01239847Z",
-    "EndTime": "2024-11-08T09:23:40.012418553Z",
+    "StartTime": "2024-11-11T10:42:15.253263091Z",
+    "EndTime": "2024-11-11T10:42:15.253487216Z",
     "Attributes": null,
     "Events": [
       {
         "Name": "store called",
         "Attributes": null,
         "DroppedAttributeCount": 0,
-        "Time": "2024-11-08T09:23:40.012400053Z"
+        "Time": "2024-11-11T10:42:15.253264799Z"
       }
     ],
     "Links": null,
@@ -41,7 +41,7 @@
         "Key": "service.name",
         "Value": {
           "Type": "STRING",
-          "Value": "p2p-observability"
+          "Value": "observability-playground"
         }
       },
       {
@@ -74,21 +74,21 @@
       }
     ],
     "InstrumentationScope": {
-      "Name": "github.com/ssvlabsinfra/p2p-observability/internal/storage",
+      "Name": "github.com/ssvlabsinfra/observability-playground/internal/storage",
       "Version": "",
       "SchemaURL": ""
     },
     "InstrumentationLibrary": {
-      "Name": "github.com/ssvlabsinfra/p2p-observability/internal/storage",
+      "Name": "github.com/ssvlabsinfra/observability-playground/internal/storage",
       "Version": "",
       "SchemaURL": ""
     }
   },
   {
-    "Name": "process",
+    "Name": "observability_playground.processor.process",
     "SpanContext": {
-      "TraceID": "d2b831d41f2f8deedf3713493010f081",
-      "SpanID": "914381fcea556a63",
+      "TraceID": "ed6e0e091ba8ac3719f1e76f74ba59ce",
+      "SpanID": "186792ea9fce2e16",
       "TraceFlags": "01",
       "TraceState": "",
       "Remote": false
@@ -101,14 +101,14 @@
       "Remote": false
     },
     "SpanKind": 1,
-    "StartTime": "2024-11-08T09:23:40.012368386Z",
-    "EndTime": "2024-11-08T09:23:40.01246822Z",
+    "StartTime": "2024-11-11T10:42:15.253213883Z",
+    "EndTime": "2024-11-11T10:42:15.253515133Z",
     "Attributes": [
       {
         "Key": "id",
         "Value": {
           "Type": "STRING",
-          "Value": "6ee8973f-b29c-43bd-81c2-adcf57699521"
+          "Value": "5a47af6a-1639-4dd0-bdd8-739b4da4b4e2"
         }
       }
     ],
@@ -117,13 +117,13 @@
         "Name": "process called",
         "Attributes": null,
         "DroppedAttributeCount": 0,
-        "Time": "2024-11-08T09:23:40.01238672Z"
+        "Time": "2024-11-11T10:42:15.253245216Z"
       },
       {
         "Name": "calling storage",
         "Attributes": null,
         "DroppedAttributeCount": 0,
-        "Time": "2024-11-08T09:23:40.012390928Z"
+        "Time": "2024-11-11T10:42:15.253251008Z"
       }
     ],
     "Links": null,
@@ -140,7 +140,7 @@
         "Key": "service.name",
         "Value": {
           "Type": "STRING",
-          "Value": "p2p-observability"
+          "Value": "observability-playground"
         }
       },
       {
@@ -173,12 +173,12 @@
       }
     ],
     "InstrumentationScope": {
-      "Name": "github.com/ssvlabsinfra/p2p-observability/internal/processor",
+      "Name": "github.com/ssvlabsinfra/observability-playground/internal/processor",
       "Version": "",
       "SchemaURL": ""
     },
     "InstrumentationLibrary": {
-      "Name": "github.com/ssvlabsinfra/p2p-observability/internal/processor",
+      "Name": "github.com/ssvlabsinfra/observability-playground/internal/processor",
       "Version": "",
       "SchemaURL": ""
     }
