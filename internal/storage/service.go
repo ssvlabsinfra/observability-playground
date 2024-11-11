@@ -2,6 +2,7 @@ package storage
 
 import (
 	"context"
+	"fmt"
 	"log/slog"
 
 	"go.opentelemetry.io/otel/codes"
@@ -14,7 +15,7 @@ func New() *Storage {
 }
 
 func (s *Storage) Store(ctx context.Context) error {
-	ctx, span := tracer.Start(ctx, "store")
+	ctx, span := tracer.Start(ctx, fmt.Sprintf("%s.store", observabilityComponentNamespace))
 	defer span.End()
 
 	span.AddEvent("store called")

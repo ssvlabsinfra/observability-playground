@@ -23,7 +23,7 @@ import (
 )
 
 const (
-	loggerName = "p2p-observability"
+	loggerName = "observability-playground"
 )
 
 var (
@@ -115,7 +115,7 @@ func Initialize(ctx context.Context, appName, appVersion string, options ...Opti
 
 			traceProvider := trace.NewTracerProvider(
 				trace.WithResource(resources),
-				trace.WithBatcher(traceExporter, trace.WithBatchTimeout(time.Second)),
+				trace.WithBatcher(traceExporter, trace.WithBatchTimeout(time.Second*5)),
 			)
 			shutdownFuncs = append(shutdownFuncs, traceExporter.Shutdown)
 			otel.SetTracerProvider(traceProvider)

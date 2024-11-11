@@ -1,6 +1,6 @@
 {
-  "Timestamp": "2024-11-08T09:26:55.828009129Z",
-  "ObservedTimestamp": "2024-11-08T09:26:55.828020088Z",
+  "Timestamp": "2024-11-11T10:42:13.25086734Z",
+  "ObservedTimestamp": "2024-11-11T10:42:13.250868923Z",
   "Severity": 9,
   "SeverityText": "",
   "Body": { "Type": "String", "Value": "item stored" },
@@ -11,7 +11,7 @@
   "Resource": [
     {
       "Key": "service.name",
-      "Value": { "Type": "STRING", "Value": "p2p-observability" }
+      "Value": { "Type": "STRING", "Value": "observability-playground" }
     },
     {
       "Key": "service.version",
@@ -30,6 +30,10 @@
       "Value": { "Type": "STRING", "Value": "1.31.0" }
     }
   ],
-  "Scope": { "Name": "p2p-observability", "Version": "", "SchemaURL": "" },
+  "Scope": {
+    "Name": "observability-playground",
+    "Version": "",
+    "SchemaURL": ""
+  },
   "DroppedAttributes": 0
 }
